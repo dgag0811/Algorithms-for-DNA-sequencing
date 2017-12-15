@@ -1,0 +1,31 @@
+#How many alignments does the naive exact matching algorithm try when matching the string GGCGCGGTGGCTCACGCCTGTAATCCCAGCACTTTGGGAGGCCGAGG (derived from human Alu sequences) to the excerpt of human chromosome 1? (Don't consider reverse complements.)
+
+def readGenome(filename):
+    genome = ''
+    with open(filename, 'r') as f:
+        for line in f:
+            # ignore header line with genome information
+            if not line[0] == '>':
+                genome += line.rstrip()
+    return genome
+    
+genome = readGenome('Week2a.fasta')
+
+#this is to concatenate the sequence of human chromosome 1
+
+def naive(p, t):
+    count = 0
+    occurrences = []
+    for i in range(len(t) - len(p) + 1):  # loop over alignments
+        match = True
+        count = count + 1
+        for j in range(len(p)):  # loop over characters
+            if t[i+j] != p[j]:  # compare characters
+                match = False
+                count = count + 1
+                break
+        if match:
+            occurrences.append(i)  # all chars matched; record
+    return occurrences, i, counts  
+    
+    #i gives the number of alignments
