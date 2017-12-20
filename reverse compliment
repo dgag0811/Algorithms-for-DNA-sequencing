@@ -1,0 +1,6 @@
+def reverseCompliment(s):
+  complement = { 'A':'T', 'G':'C', 'C':'G', 'T':'A' }
+  t = ''
+  for base in s:
+    t = complement(base)+t
+   return t
