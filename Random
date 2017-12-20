@@ -1,3 +1,12 @@
-To join
+# To join
 seqs = [ 'A', 'T', 'G', 'C' ]
 print(''.join(seqs))
+
+# To choose randomly from a sequence
+import random
+random.choice('ACTG')
+
+# To print the same base each time
+import random
+random.seed(5)
+random.choice('ACTG')
