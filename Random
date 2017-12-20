@@ -1,0 +1,3 @@
+To join
+seqs = [ 'A', 'T', 'G', 'C' ]
+print(''.join(seqs))
